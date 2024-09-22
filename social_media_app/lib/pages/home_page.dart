@@ -4,8 +4,17 @@ import 'package:social_media_app/components/my_grid_view.dart';
 import 'package:social_media_app/components/my_story.dart';
 import 'package:social_media_app/components/my_tab_bar.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  List stories = [];
+  bool isLoading = true;
+  bool hasError = false;
 
   @override
   Widget build(BuildContext context) {
@@ -26,12 +35,11 @@ class HomePage extends StatelessWidget {
             ],
           ),
 
-          //* Bottom Navigation placed on top of GridView
+          //* Bottom Navigation
           Align(
             alignment: Alignment.bottomCenter,
             child: Padding(
-              padding: const EdgeInsets.only(
-                  bottom: 10.0), // Adjust the padding if needed
+              padding: const EdgeInsets.only(bottom: 10.0),
               child: MyBottomNav(),
             ),
           ),
