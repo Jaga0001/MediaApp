@@ -38,8 +38,8 @@ class MyBottomNav extends StatelessWidget {
                 height: 30,
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(15.0),
+            const Padding(
+              padding: EdgeInsets.all(15.0),
               child: CircleAvatar(
                 backgroundImage: NetworkImage(
                     'https://i.pinimg.com/originals/15/80/47/15804790beb41b0758b91945cfe0a9df.jpg'),

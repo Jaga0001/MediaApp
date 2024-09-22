@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MyTabBar extends StatefulWidget {
-  MyTabBar({super.key});
+  const MyTabBar({super.key});
 
   @override
   State<MyTabBar> createState() => _MyTabBarState();
@@ -18,7 +18,7 @@ class _MyTabBarState extends State<MyTabBar> {
       child: SizedBox(
         height: 60,
         child: ListView.builder(
-            physics: NeverScrollableScrollPhysics(),
+            physics: const NeverScrollableScrollPhysics(),
             scrollDirection: Axis.horizontal,
             itemCount: tabs.length,
             itemBuilder: (context, index) {
@@ -29,8 +29,8 @@ class _MyTabBarState extends State<MyTabBar> {
                   });
                 },
                 child: AnimatedContainer(
-                  duration: Duration(microseconds: 300),
-                  margin: EdgeInsets.all(5),
+                  duration: const Duration(microseconds: 300),
+                  margin: const EdgeInsets.all(5),
                   width: 81,
                   height: 45,
                   decoration: BoxDecoration(

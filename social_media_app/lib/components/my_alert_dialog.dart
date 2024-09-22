@@ -27,11 +27,11 @@ class MyAlertDialog extends StatelessWidget {
                 return Container(
                   height: 150,
                   color: Colors.grey,
-                  child: Center(child: Icon(Icons.broken_image)),
+                  child: const Center(child: Icon(Icons.broken_image)),
                 );
               },
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Text(description),
           ],
         ),
@@ -41,7 +41,7 @@ class MyAlertDialog extends StatelessWidget {
           onPressed: () {
             Navigator.of(context).pop();
           },
-          child: Text('OK'),
+          child: const Text('OK'),
         ),
       ],
     );

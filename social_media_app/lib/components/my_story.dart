@@ -37,13 +37,13 @@ class MyStory extends StatelessWidget {
                   radius: 40,
                   backgroundImage: NetworkImage(_profilePhoto[index]),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 5,
                 ),
                 Center(
                     child: Text(
                   _profileName[index],
-                  style: TextStyle(fontSize: 10),
+                  style: const TextStyle(fontSize: 10),
                 ))
               ],
             ),

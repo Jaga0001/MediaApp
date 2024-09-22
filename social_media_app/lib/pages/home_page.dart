@@ -25,21 +25,21 @@ class _HomePageState extends State<HomePage> {
           Column(
             children: [
               //* TabBar
-              MyTabBar(),
+              const MyTabBar(),
 
               //* Stories
               SizedBox(height: 115, child: MyStory()),
 
               //* GridView Stories
-              Expanded(child: MyGridView()),
+              const Expanded(child: MyGridView()),
             ],
           ),
 
           //* Bottom Navigation
-          Align(
+          const Align(
             alignment: Alignment.bottomCenter,
             child: Padding(
-              padding: const EdgeInsets.only(bottom: 10.0),
+              padding: EdgeInsets.only(bottom: 10.0),
               child: MyBottomNav(),
             ),
           ),

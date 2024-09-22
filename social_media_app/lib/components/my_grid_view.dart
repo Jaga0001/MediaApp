@@ -22,7 +22,7 @@ class _MyGridViewState extends State<MyGridView> {
   }
 
   Future<void> fetchStories() async {
-    final String apiUrl =
+    const String apiUrl =
         "https://jagavantha.pythonanywhere.com/stories"; // Replace with actual API URL
     try {
       final response = await http.get(Uri.parse(apiUrl));
@@ -49,22 +49,22 @@ class _MyGridViewState extends State<MyGridView> {
   @override
   Widget build(BuildContext context) {
     if (isLoading) {
-      return Center(child: CircularProgressIndicator()); // Show loading spinner
+      return const Center(child: CircularProgressIndicator()); // Show loading spinner
     }
 
     if (hasError) {
-      return Center(child: Text('Error loading stories')); // Show error message
+      return const Center(child: Text('Error loading stories')); // Show error message
     }
 
     if (stories.isEmpty) {
-      return Center(
+      return const Center(
           child:
               Text('No stories available')); // Show if no stories are available
     }
 
     return GridView.builder(
         itemCount: stories.length,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2, // 2 columns
           childAspectRatio: 3 / 4, // Aspect ratio for grid items
         ),
@@ -102,7 +102,7 @@ class _MyGridViewState extends State<MyGridView> {
                         errorBuilder: (context, error, stackTrace) {
                           return Container(
                             color: Colors.grey,
-                            child: Center(child: Icon(Icons.broken_image)),
+                            child: const Center(child: Icon(Icons.broken_image)),
                           );
                         },
                       ),
@@ -112,17 +112,17 @@ class _MyGridViewState extends State<MyGridView> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Container(
+                          SizedBox(
                             height: 50,
                             width: 80,
                             child: Text(
                               stories[index]['title'],
                             ),
                           ),
-                          Container(
-                            child: Image.asset('assets/option.png'),
+                          SizedBox(
                             height: 20,
                             width: 20,
+                            child: Image.asset('assets/option.png'),
                           ),
                         ],
                       ),
